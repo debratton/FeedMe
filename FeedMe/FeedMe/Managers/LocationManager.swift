@@ -10,7 +10,8 @@ import Combine
 
 enum MapDetails {
     static let defaultLocation = CLLocationCoordinate2D(latitude: 42.190300, longitude: -88.383740)
-    static let defaultSpan = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+    static let defaultSpan = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+    static let zoomedSpan = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
 }
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
@@ -56,15 +57,22 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription)
     }
+    
+    func getDistanceAway(point: CLLocationCoordinate2D) -> Double? {
+        guard let userLocation = locationManager.location else {
+            return nil // User location unknown!
+        }
+        let pointLocation = CLLocation(
+            latitude:  point.latitude,
+            longitude: point.longitude
+        )
+        return userLocation.distance(from: pointLocation)
+    }
 }
 
 extension MKCoordinateRegion {
 
-//    static func defaultRegion() -> MKCoordinateRegion {
-//        MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.201570, longitude: -88.395310), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
-//    }
-
     static func regionFromLandMark(_ landmark: Landmark) -> MKCoordinateRegion {
-        MKCoordinateRegion(center: landmark.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
+        MKCoordinateRegion(center: landmark.coordinate, span: MapDetails.zoomedSpan)
     }
 }

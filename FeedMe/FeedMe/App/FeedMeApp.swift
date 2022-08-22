@@ -12,6 +12,8 @@ struct FeedMeApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(SearchViewModel())
+                .preferredColorScheme(.dark)
         }
     }
 }

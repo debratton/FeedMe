@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90D8265C28B2B413006BE870 /* SearchCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D8265B28B2B413006BE870 /* SearchCellView.swift */; };
+		90D8265E28B2D070006BE870 /* SearchDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D8265D28B2D070006BE870 /* SearchDetailsView.swift */; };
 		90D9345C28B17FC90073AB9B /* FeedMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D9345B28B17FC90073AB9B /* FeedMeApp.swift */; };
 		90D9345E28B17FC90073AB9B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D9345D28B17FC90073AB9B /* ContentView.swift */; };
 		90D9346028B17FCA0073AB9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90D9345F28B17FCA0073AB9B /* Assets.xcassets */; };
@@ -17,9 +19,13 @@
 		90D9347728B184890073AB9B /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D9347628B184890073AB9B /* FavoritesView.swift */; };
 		90D9347A28B187590073AB9B /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D9347928B187590073AB9B /* Landmark.swift */; };
 		90D9347C28B188C20073AB9B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D9347B28B188C20073AB9B /* LocationManager.swift */; };
+		90F54CAC28B3293700CCB422 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F54CAB28B3293700CCB422 /* AnnotationView.swift */; };
+		90F6A50A28B2907C00F7BA7F /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F6A50928B2907C00F7BA7F /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		90D8265B28B2B413006BE870 /* SearchCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellView.swift; sourceTree = "<group>"; };
+		90D8265D28B2D070006BE870 /* SearchDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailsView.swift; sourceTree = "<group>"; };
 		90D9345828B17FC90073AB9B /* FeedMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90D9345B28B17FC90073AB9B /* FeedMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMeApp.swift; sourceTree = "<group>"; };
 		90D9345D28B17FC90073AB9B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -31,6 +37,9 @@
 		90D9347628B184890073AB9B /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		90D9347928B187590073AB9B /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		90D9347B28B188C20073AB9B /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		90F54CAB28B3293700CCB422 /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
+		90F54CAD28B32AA800CCB422 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		90F6A50928B2907C00F7BA7F /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +72,11 @@
 		90D9345A28B17FC90073AB9B /* FeedMe */ = {
 			isa = PBXGroup;
 			children = (
+				90F54CAD28B32AA800CCB422 /* Info.plist */,
 				90D9346928B180160073AB9B /* App */,
 				90D9347D28B18EF00073AB9B /* Extensions */,
 				90D9346B28B1802B0073AB9B /* Views */,
-				90D9346C28B180340073AB9B /* ModelView */,
+				90D9346C28B180340073AB9B /* ViewModel */,
 				90D9346A28B180220073AB9B /* Model */,
 				90D9346D28B180410073AB9B /* Managers */,
 				90D9345F28B17FCA0073AB9B /* Assets.xcassets */,
@@ -104,16 +114,16 @@
 			children = (
 				90D9346F28B183170073AB9B /* Main */,
 				90D9346E28B1830D0073AB9B /* Login */,
-				90D9345D28B17FC90073AB9B /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		90D9346C28B180340073AB9B /* ModelView */ = {
+		90D9346C28B180340073AB9B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				90F6A50928B2907C00F7BA7F /* SearchViewModel.swift */,
 			);
-			path = ModelView;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		90D9346D28B180410073AB9B /* Managers */ = {
@@ -135,9 +145,13 @@
 		90D9346F28B183170073AB9B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				90D9345D28B17FC90073AB9B /* ContentView.swift */,
 				90D9347228B183570073AB9B /* MainView.swift */,
 				90D9347428B184560073AB9B /* SearchView.swift */,
+				90D8265B28B2B413006BE870 /* SearchCellView.swift */,
+				90D8265D28B2D070006BE870 /* SearchDetailsView.swift */,
 				90D9347628B184890073AB9B /* FavoritesView.swift */,
+				90F54CAB28B3293700CCB422 /* AnnotationView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -220,11 +234,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				90D9347A28B187590073AB9B /* Landmark.swift in Sources */,
+				90F54CAC28B3293700CCB422 /* AnnotationView.swift in Sources */,
+				90D8265E28B2D070006BE870 /* SearchDetailsView.swift in Sources */,
 				90D9347528B184560073AB9B /* SearchView.swift in Sources */,
 				90D9347128B183260073AB9B /* LoginView.swift in Sources */,
 				90D9347728B184890073AB9B /* FavoritesView.swift in Sources */,
 				90D9347C28B188C20073AB9B /* LocationManager.swift in Sources */,
 				90D9347328B183570073AB9B /* MainView.swift in Sources */,
+				90F6A50A28B2907C00F7BA7F /* SearchViewModel.swift in Sources */,
+				90D8265C28B2B413006BE870 /* SearchCellView.swift in Sources */,
 				90D9345E28B17FC90073AB9B /* ContentView.swift in Sources */,
 				90D9345C28B17FC90073AB9B /* FeedMeApp.swift in Sources */,
 			);
@@ -358,6 +376,7 @@
 				DEVELOPMENT_TEAM = 38CU8Z7F4U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FeedMe/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "FeedMe app requires your location for searching near by resteraunts.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "FeedMe app requires your location for searching near by resteraunts.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -389,6 +408,7 @@
 				DEVELOPMENT_TEAM = 38CU8Z7F4U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FeedMe/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "FeedMe app requires your location for searching near by resteraunts.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "FeedMe app requires your location for searching near by resteraunts.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
